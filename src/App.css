@@ -1,0 +1,152 @@
+.App{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #373738;
+}
+
+.header {
+  display: flex;
+  background-color: #D9D6D6;
+  padding: 2%;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.spacer {
+width: 30%;
+display: flex;
+background-color: red;
+content: " ";
+}
+
+.search{
+  display: flex;
+}
+
+.busca {
+  height: 40px;
+  width: 60%;
+  padding-left: 15px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+}
+
+.btn-buscar {
+  background-color: #FFCC03;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 0 6px 6px 0;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #F9F9F9;
+  height: 100%;
+  padding: 20px 50px;
+  max-width: 70%; 
+}
+
+.card{
+  background-color: #FFF;
+  text-align: center;
+  border: 1px solid #E4E4E4;
+  width: 200px;
+  border-radius: 6px;
+  padding-top: 15px;
+  margin: 15px;
+}
+
+.adicionar {
+  border: none;
+  width: 100%;
+  padding: 20px;
+  border-radius: 0 0 6px 6px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #FFCC03;
+}
+
+.preco {
+  font-size: 18px;
+  color: #FFCC03;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 16px;
+}
+
+.tipos {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 15px;
+}
+
+.grass{
+  color: #373738;
+  background-color: #9BCC50;
+  border-radius: 20px;
+  padding: 4px 15px;
+  font-weight: bold;
+}
+
+.poison{
+  color: #ffffff;
+  background-color: #B97FC9;
+  border-radius: 20px;
+  padding: 4px 15px;
+  font-weight: bold;
+}
+
+.carrinho {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  width: 25%;
+  height: 100%;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  justify-content: space-between;
+}
+
+.cart-header {
+  display: flex;
+  background-color: #FFCC03;
+  align-items: center;
+  padding: 20px;
+}
+
+.cart-header img{
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.finalizar {
+  border: none;
+  background-color: #FFCC03;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cart-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+    background-color: #FFF;
+    border: 2px solid #E4E4E4;
+    border-radius: 6px;
+    height: 96px;
+}
+
+.cart-holder{
+  display: flex;
+  justify-content: space-around;
+  flex: 1;
+}
+
+
