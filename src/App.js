@@ -61,7 +61,7 @@ const handleDisplayModal = () => {
           ? pokemon.map(item => (
               <div className="card">
                 <div>
-                  <img src={item.sprites.front_default} />
+                  <img src={item.sprites.front_default} alt="sprite" />
                 </div>
                 <div className="infos">
                   <h5>{item.name}</h5>
@@ -85,14 +85,14 @@ const handleDisplayModal = () => {
 
       <div className="carrinho">
         <div className="cart-header">
-          <img src={pokeball} />
+          <img src={pokeball} alt="pokeball" />
           <h3>Meu Carrinho</h3>
         </div>
 
         <div className="card-holder">
           {cart.map(item => (
             <div className="cart-card">
-              <img src={item.sprites.front_default} />
+              <img src={item.sprites.front_default} alt="sprites" />
               <h5>{item.name}</h5>
               <h6 className="preco">{item.price}</h6>
             </div>
@@ -105,7 +105,7 @@ const handleDisplayModal = () => {
         <button className="finalizar" onClick={handleDisplayModal}>Finalizar compra</button>
       </div>
       <div className={ modal ? "modal" : "modalOff" }>
-        <img src={obrigado} />
+        <img src={obrigado} alt="obrigado" />
         <p>Compra realizada com sucesso!</p>
       </div>
     </div>
