@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import logo from "./img/logo.png";
 import buscar from "./img/buscar.png";
-import bulba from "./img/bulba.png";
 import pokeball from "./img/pokeball.png";
 import obrigado from "./img/obrigado.png";
 import "./App.css";
@@ -15,12 +14,11 @@ function App() {
   function getPokemon() {
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151").then(res => {
       res.data.results.map(item => {
-        axios.get(item.url).then(({ data }) => {
-          setPokemon(pokemon => [
+        return axios.get(item.url).then(({ data }) => {
+          return setPokemon(pokemon => [
             ...pokemon,
             { ...data, price: (Math.random() * 1000 + 1).toFixed(2) }
           ]);
-          console.log(data);
         });
       });
     });
@@ -47,12 +45,12 @@ const handleDisplayModal = () => {
     <div className="App">
       <div className="header" id="header">
         <div>
-          <img src={logo} />
+          <img src={logo} alt="logo" />
         </div>
         <div className="search">
           <input id="busca" className="busca" placeholder="Busque aqui!" />
           <button id="buscar" className="btn-buscar">
-            <img src={buscar} />
+            <img src={buscar} alt="buscar" />
           </button>
         </div>
         <div className="spacer"></div>
