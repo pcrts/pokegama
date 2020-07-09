@@ -4,11 +4,14 @@ import logo from "./img/logo.png";
 import buscar from "./img/buscar.png";
 import bulba from "./img/bulba.png";
 import pokeball from "./img/pokeball.png";
+import obrigado from "./img/obrigado.png";
 import "./App.css";
 
 function App() {
   const [pokemon, setPokemon] = useState([]);
   const [cart, setCart] = useState([]);
+  const [totalCart, setTotalCart] = useState(0);
+  const [modal, setModal] = useState(false);
   function getPokemon() {
     axios.get("https://pokeapi.co/api/v2/pokemon?limit=151").then(res => {
       res.data.results.map(item => {
@@ -28,6 +31,18 @@ function App() {
     })();
   }, []);
   useEffect(() => console.log(cart), [cart]);
+  useEffect(() => {
+  const totalPrice = cart.reduce((total, cv) => total + Number(cv.price), 0);
+  setTotalCart(totalPrice.toFixed(2));
+}, [totalCart, cart]);
+const handleDisplayModal = () => {
+  setModal(true);
+  setTimeout(() => {
+    setCart([]);
+    setModal(false);
+    setTotalCart(0);
+  }, 2000);
+}
   return (
     <div className="App">
       <div className="header" id="header">
@@ -85,7 +100,15 @@ function App() {
             </div>
           ))}
         </div>
-        <button className="finalizar">Finalizar compra</button>
+        <div className="totalCart">
+          <p><b>Total</b></p>
+          <p>{totalCart}</p>
+        </div>
+        <button className="finalizar" onClick={handleDisplayModal}>Finalizar compra</button>
+      </div>
+      <div className={ modal ? "modal" : "modalOff" }>
+        <img src={obrigado} />
+        <p>Compra realizada com sucesso!</p>
       </div>
     </div>
   );
